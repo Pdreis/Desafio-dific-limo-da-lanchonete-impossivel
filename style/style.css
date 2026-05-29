@@ -75,3 +75,7 @@ li button:hover {
     margin-top: 20px;
     font-weight: bold;
 }
+
+#btnAtender{
+    cursor: pointer;
+}

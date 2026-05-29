@@ -1,4 +1,4 @@
-const inputPedido = document.getElementById("inputTexto")
+const inputPedido = document.getElementById("inputPedido")
 const botaoAdicionar = document.getElementById("btnAdicionar")
 const botaoAtender = document.getElementById("btnAtender")
 const lista = document.getElementById("listaPedidos")
@@ -6,8 +6,7 @@ const lista = document.getElementById("listaPedidos")
 botaoAdicionar.addEventListener("click", () => {
     const li = document.createElement("li")
     
-    const pedido = document.createElement("p")
-    pedido.innerText = inputPedido.value 
+    li.innerText = inputPedido.value 
 
     const botaoCancelar = document.createElement("button")
     botaoCancelar.innerText = "❌"
@@ -16,10 +15,27 @@ botaoAdicionar.addEventListener("click", () => {
         li.remove()
     })
 
-    li.appendChild(pedido)
     li.appendChild(botaoCancelar)
     lista.appendChild(li)
 
     inputPedido.value = " "
 
+    li.addEventListener("click" , () => {
+    li.style.textDecoration = "line-through"
 })
+
+if(li.value == " "){
+    return;
+}
+
+
+})
+
+botaoAtender.addEventListener("click", () => {
+    const primeiro = lista.firstElementChild
+    if(primeiro){
+        primeiro.remove()
+    } else {
+        alert("A lista está vazia")
+    }
+}) 
