@@ -2,6 +2,7 @@ const inputPedido = document.getElementById("inputPedido")
 const botaoAdicionar = document.getElementById("btnAdicionar")
 const botaoAtender = document.getElementById("btnAtender")
 const lista = document.getElementById("listaPedidos")
+const pedidoAtual = document.getElementById("pedidoAtual")
 
 botaoAdicionar.addEventListener("click", () => {
     const li = document.createElement("li")
